@@ -1,0 +1,52 @@
+<form action="" [formGroup]="registerForm" (ngSubmit)="doRegister()">
+    <div class="mb-3">
+        <div class="input-group">
+            <span class="input-group-text">Email</span>
+            <input type="email" class="form-control" formControlName="email">
+        </div>
+        <div class="form-text" id="basic-addon4">
+            @if(registerForm.get('email')?.touched && registerForm.get('email')?.errors){
+                @if(registerForm.get('email')?.errors!["required"]){
+                    <small class="form-text">Este campo es obligatorio</small>
+                }@if(registerForm.get('email')?.errors!["pattern"]) {
+                    <small class="form-text">Formato de email incorrecto</small>
+                }
+            }
+        </div>
+    </div>
+    <div class=" mb-3">
+        <div class="input-group">
+
+            <span class="input-group-text"  for="">Password</span>
+            <input type="password" class="form-control" formControlName="password">
+        </div>
+        <div class="form-text" id="basic-addon4"> 
+            @if(registerForm.get('password')?.touched && registerForm.get('password')?.errors){
+                @if(registerForm.get('password')?.errors!["required"]){
+                    <small class="form-text" >Este campo es obligatorio</small>
+                }@if(registerForm.get('password')?.errors!["pattern"]) {
+                    <small class="form-text">Formato de contraseña incorrecto, debe contener Mayusculas, mínusculas , numeros y carácteres especiales</small>
+                }
+            }
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <div class="input-group">
+            <span class="input-group-text" for="">Nombre</span>
+            <input type="text" class="form-control" formControlName="name">
+
+        </div>
+        <div class="form-text" id="basic-addon4">
+
+            @if(registerForm.get('name')?.touched && registerForm.get('name')?.errors){
+                @if(registerForm.get('name')?.errors!["required"]){
+                    <small class="form-text">Este campo es obligatorio</small>
+                }@if(registerForm.get('name')?.errors!["pattern"]) {
+                    <small class="form-text">El nombre no debe contener Números</small>
+                }
+            }
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
