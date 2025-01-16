@@ -1,12 +1,12 @@
-<div class="layout">
+<div class="layout-text">
     <h1>Peliculas</h1>
     
     
-    <div class="container text-center">
-        <div class="row">
+    <div class="container text-center ">
+        <div class="row ">
     
             @for(film of films; track film._id){
-                <div class="col">
+                <div class="col layout">
     
                     <app-card [film] = "film"></app-card>
                 </div>

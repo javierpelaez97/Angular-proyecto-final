@@ -1,7 +1,21 @@
 footer{
+    width: 100%;
+    background-color: black;
+    text-align: center;
+    padding: 10px 10px;
+    
     position: fixed;
-    bottom: 0;
+    bottom: 0px;
 }
 main{
-    margin-top: 100px;
-}
+    
+    margin-bottom: 50px;
+    background: rgb(34,193,195);
+background: linear-gradient(344deg, rgba(34,193,195,1) 0%, rgba(253,45,206,0.3394607843137255) 95%);
+}                  
+
+
+
+
+
+
